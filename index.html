@@ -18,8 +18,8 @@
     </p>
 
     <label for="">What is your favorite fruit?</label>
-    <select name="" id="">
-      <option value="">Select a fruit</option>
+    <select name="" id="fruits">
+      <option checked value="">Select a fruit</option>
       <option value="apple">🍎Apple</option>
       <option value="pear">🍐Pear</option>
       <option value="orange">🍊Orange</option>
@@ -34,7 +34,30 @@
       and the the user selects yellow, alert 💛. Include an empty option which
       is selected by default.
     </p>
+    <label for="">Primary Color </label>
+    <select name="" id="primarycolors">
+      <option checked value=""></option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+    </select>
 
-    <script src="src/index.js"></script>
+    <script>
+      function coloremoji(event) {
+        if (event.target.value.length > 0) {
+          if (event.target.value === "red") {
+            alert("❤️");
+          }
+          if (event.target.value === "blue") {
+            alert("💙");
+          }
+          if (event.target.value === "yellow") {
+            alert("💛");
+          }
+        }
+      }
+      let primarycolor = document.querySelector("#primarycolors");
+      primarycolor.addEventListener("change", coloremoji);
+    </script>
   </body>
 </html>
